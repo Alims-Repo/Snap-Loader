@@ -10,8 +10,8 @@ class AppConfig {
     val  shareUrl = Environment.getExternalStorageDirectory().path+"/Android/data/com.alim.snaploader/Update/SnapLoader.apk"
 
     /**Main Application Data*/
-    val updateDownloadUrl = "https://github.com/Alims-Repo/SnapLoader/raw/master/app/release/app-release.apk"
-    val updateCheckUrl = "https://raw.githubusercontent.com/Alims-Repo/SnapLoader/master/app/release/output.json"
+    val updateDownloadUrl = "https://github.com/Alims-Repo/Snap-Loader/raw/master/app/release/app-release.apk"
+    val updateCheckUrl = "https://raw.githubusercontent.com/Alims-Repo/Snap-Loader/master/app/release/output.json"
     val updatePath = Environment.getExternalStorageDirectory().path+"/Android/data/com.alim.snaploader/Update/SnapLoader.apk"
 
     /**Extension Data*/
