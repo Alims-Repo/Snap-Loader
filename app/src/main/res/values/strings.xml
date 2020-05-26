@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Snap Loader</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="player_error">Error initializing YouTube player: %s</string>
+    <string name="seek_to">Jump To</string>
+    <string name="seek_to_hint">Seconds</string>
+
+    <string name="install_des">Installing this extension will unlock backgroundyoutube playback and also lets you to download videos from : \n\n\t1. Youtube\n\t2. Facebook\n\t3. Instagram\n\t4. Tiktok\n\t5. Twitter\n\t6. Vimeo\n\t7. TopBuzz\n\t8. Daily Motion</string>
+    <string name="uninstall_des">After Uninstalling this extension you will lose some great feature like background youtube playback and cannot download audio or video files.</string>
+</resources>

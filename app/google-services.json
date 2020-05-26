@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "264201670007",
+    "firebase_url": "https://snap-loader.firebaseio.com",
+    "project_id": "snap-loader",
+    "storage_bucket": "snap-loader.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:264201670007:android:bc9a1ce98d761c00a5e572",
+        "android_client_info": {
+          "package_name": "com.alim.snaploader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "264201670007-gdb47sv0adkk8krevuenkdus82dpistl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCr1D-cI651RV2iOtqtzv7TED9PkWUIipU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "264201670007-gdb47sv0adkk8krevuenkdus82dpistl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

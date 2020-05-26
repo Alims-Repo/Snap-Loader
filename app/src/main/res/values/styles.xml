@@ -1,0 +1,51 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="BlackWhite">@color/colorBlack</item>
+        <item name="WhiteBlack">@color/colorWhite</item>
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button.TextButton</item>
+        <item name="IconBack">@color/iconWhite</item>
+    </style>
+
+    <style name="AppThemeDark" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryNight</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkNight</item>
+        <item name="colorAccent">@color/colorAccentNight</item>
+        <item name="BlackWhite">@color/colorWhite</item>
+        <item name="WhiteBlack">@color/colorBlack</item>
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button.TextButton</item>
+        <item name="IconBack">@color/iconBlack</item>
+    </style>
+
+    <style name="NavigationDrawerStyle">
+        <item name="android:listPreferredItemHeightSmall">60dp</item>
+        <item name="listPreferredItemHeightSmall">60dp</item>
+        <!-- item padding left in menu-->
+        <item name="android:listPreferredItemPaddingLeft">8dp</item>
+        <item name="listPreferredItemPaddingLeft">8dp</item>
+        <!-- item padding right in menu-->
+        <item name="android:listPreferredItemPaddingRight">8dp</item>
+        <item name="listPreferredItemPaddingRight">8dp</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="ReceiverTheme" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowMinWidthMinor">80%</item>
+        <item name="android:windowMinWidthMajor">55%</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

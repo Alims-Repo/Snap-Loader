@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff9800</color>
+    <color name="colorPrimaryDark">#ff9800</color>
+    <color name="colorAccent">#ff9800</color>
+
+    <color name="colorPrimaryNight">#252525</color>
+    <color name="colorPrimaryDarkNight">#252525</color>
+    <color name="colorAccentNight">#3ed621</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+    <color name="iconWhite">#ECECEC</color>
+    <color name="iconBlack">#353535</color>
+</resources>
