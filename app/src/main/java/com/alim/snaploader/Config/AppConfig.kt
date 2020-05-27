@@ -4,7 +4,9 @@ import android.os.Environment
 
 class AppConfig {
 
+    val extensionPackageName = "com.alim.extension"
     val YOUTUBE_API_KEY = "AIzaSyCvIIJmyv8fVIu-VIVOBkYaaXYo-AU8CcE"
+    val downloadPath = Environment.getExternalStorageDirectory().path+"/Snap Loader/"
 
     /**Share Link*/
     val  shareUrl = Environment.getExternalStorageDirectory().path+"/Android/data/com.alim.snaploader/Update/SnapLoader.apk"
@@ -15,7 +17,7 @@ class AppConfig {
     val updatePath = Environment.getExternalStorageDirectory().path+"/Android/data/com.alim.snaploader/Update/SnapLoader.apk"
 
     /**Extension Data*/
-    val updateExDownloadUrl = "https://github.com/Alims-Repo/Extractor/raw/master/app/release/app-release.apk"
-    val updateExCheckUrl = "https://raw.githubusercontent.com/Alims-Repo/Extractor/master/app/release/output.json"
-    val updateExPath = Environment.getExternalStorageDirectory().path+"/Android/data/com.alim.snaploader/Update/Extractor.apk"
+    val updateExDownloadUrl = "https://github.com/Alims-Repo/Extension/raw/master/app/release/app-release.apk"
+    val updateExCheckUrl = "https://raw.githubusercontent.com/Alims-Repo/Extension/master/app/release/output.json"
+    val updateExPath = Environment.getExternalStorageDirectory().path+"/Android/data/com.alim.snaploader/Update/Extension.apk"
 }

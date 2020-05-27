@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.alim.snaploader.BuildConfig
+import com.alim.snaploader.Config.AppConfig
 import com.alim.snaploader.Database.ApplicationData
 import com.alim.snaploader.R
 
@@ -25,7 +26,7 @@ class AboutActivity : AppCompatActivity() {
             "Version "+BuildConfig.VERSION_NAME
         try {
             findViewById<TextView>(R.id.version_ex).text = "Version "+
-                packageManager.getPackageInfo("com.alim.extractor", 0).versionName
+                packageManager.getPackageInfo(AppConfig().extensionPackageName, 0).versionName
         } catch (e: java.lang.Exception) {
             findViewById<TextView>(R.id.version_ex).text = "Not Installed"
         }

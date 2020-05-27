@@ -108,8 +108,8 @@ class SplashActivity : AppCompatActivity() {
             var versionCode = versioncode
             var versionname = versionName
             try {
-                versionCode = packageManager.getPackageInfo("com.alim.extractor", 0).versionCode
-                versionname = packageManager.getPackageInfo("com.alim.extractor", 0).versionName
+                versionCode = packageManager.getPackageInfo(AppConfig().extensionPackageName, 0).versionCode
+                versionname = packageManager.getPackageInfo(AppConfig().extensionPackageName, 0).versionName
             } catch (e: java.lang.Exception) {
                 Log.println(Log.ASSERT,"SPLASH",e.toString())
             }

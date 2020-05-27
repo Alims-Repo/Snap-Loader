@@ -5,15 +5,13 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import com.alim.snaploader.Config.AppConfig
-import com.alim.snaploader.R
 import com.google.android.youtube.player.YouTubeBaseActivity
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
 import com.google.android.youtube.player.YouTubePlayer.Provider
 import com.google.android.youtube.player.YouTubePlayerView
-import org.w3c.dom.Text
 
-class PlayerActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener {
+class YPlayerActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListener {
 
     private val RECOVERY_REQUEST = 1
     lateinit var title: TextView
@@ -22,7 +20,7 @@ class PlayerActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListene
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_player)
+        setContentView(R.layout.activity_y_player)
         findViewById<Toolbar>(R.id.toolbar).setNavigationOnClickListener { finish() }
 
         view = findViewById(R.id.views)

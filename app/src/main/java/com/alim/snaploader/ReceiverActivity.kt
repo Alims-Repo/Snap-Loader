@@ -9,13 +9,12 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.RadioGroup
-import android.widget.Toast
+import android.widget.*
 import com.alim.snaploader.Database.ApplicationData
 import com.alim.snaploader.Interface.BroadcastInterface
 import com.alim.snaploader.R
 import com.alim.snaploader.Reciever.LinkReceiver
+import com.alim.snaploader.Services.DownloadService
 import com.google.android.material.radiobutton.MaterialRadioButton
 
 class ReceiverActivity : Activity() {
@@ -28,7 +27,7 @@ class ReceiverActivity : Activity() {
     var LT6 = ""
     var LAD = ""
 
-    //var name = ""
+    var name = ""
 
     lateinit var radioGroup: RadioGroup
     lateinit var T8: MaterialRadioButton
@@ -65,7 +64,12 @@ class ReceiverActivity : Activity() {
 
         LinkReceiver().register(object : BroadcastInterface {
             override fun Cast(inte: Intent) {
-                youTube(inte)
+                findViewById<ProgressBar>(R.id.loading).visibility = View.GONE
+                if (inte.getStringExtra("ERROR")!=null) {
+                    val er = findViewById<TextView>(R.id.error)
+                    er.text = inte.getStringExtra("ERROR")
+                    er.visibility = View.VISIBLE
+                } else youTube(inte)
             }
         })
 
@@ -115,30 +119,25 @@ class ReceiverActivity : Activity() {
                 finish()
             }
         } else {
-            Toast.makeText(this, "Extractor Extension required.",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Extension required.",Toast.LENGTH_SHORT).show()
             finish()
         }
     }
 
     private fun download(url: String, ex: String) {
-        Log.println(Log.ASSERT, "LINK", url)
-        val intent = Intent()
-        intent.action = Intent.ACTION_SEND
-        intent.type = "alim/code"
-        intent.component = ComponentName(
-            "com.alim.extractor",
-            "com.alim.extractor.ExtractorActivity"
-        )
+        Log.println(Log.ASSERT, "Link", url)
+        Log.println(Log.ASSERT, "Name", name+ex)
+        val intent = Intent(this, DownloadService::class.java)
         intent.putExtra(Intent.EXTRA_TEXT, "DOWNLOAD")
         intent.putExtra("LINK", url)
-        //intent.putExtra("NAME", name+ex)
-        startActivity(intent)
+        intent.putExtra("NAME", name+ex)
+        startService(intent)
         finish()
     }
 
     private fun youTube(data: Intent) {
         Log.println(Log.ASSERT, "Done", "")
-        //name = data.getStringExtra("NAME")!!
+        name = data.getStringExtra("Name")!!
         for (i in 0 until data.getIntExtra("Size", 0)) {
             try {
                 val Tag = data.getIntExtra("Tag : $i", 0)

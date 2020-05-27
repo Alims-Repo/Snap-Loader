@@ -11,12 +11,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.Toast
-import androidx.core.app.ActivityCompat.startActivityForResult
 import androidx.recyclerview.widget.RecyclerView
-import com.alim.snaploader.PlayerActivity
+import com.alim.snaploader.YPlayerActivity
 import com.alim.snaploader.Database.ApplicationData
+import com.alim.snaploader.EPlayerActivity
 import com.alim.snaploader.Model.YoutubeData
 import com.alim.snaploader.R
 import com.bumptech.glide.Glide
@@ -51,17 +50,10 @@ class RecyclerAdapter(context: Context,
 
         holder.layout.setOnClickListener {
             var intent = Intent()
-            if (ApplicationData(mContext).externalPlayer) {
-                if (extractorAvailable(mContext)) {
-                    intent.action = Intent.ACTION_SEND
-                    intent.type = "alim/code"
-                    intent.component =
-                        ComponentName("com.alim.extractor", "com.alim.extractor.PlayerActivity")
-                    Toast.makeText(mContext, "External", Toast.LENGTH_SHORT).show()
-                }
-            }
+            intent = if (ApplicationData(mContext).externalPlayer)
+                Intent(mContext, EPlayerActivity::class.java)
             else
-                intent = Intent(mContext, PlayerActivity::class.java)
+                Intent(mContext, YPlayerActivity::class.java)
             intent.putExtra(Intent.EXTRA_TEXT, "YOUTUBE")
             intent.putExtra("LINK", data[position].id)
             intent.putExtra("VIEWS", data[position].views)

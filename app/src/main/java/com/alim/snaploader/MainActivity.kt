@@ -25,10 +25,8 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.viewpager.widget.ViewPager
 import com.alim.snaploader.Adapter.MainPagerAdapter
-import com.alim.snaploader.BuildConfig
 import com.alim.snaploader.Config.AppConfig
 import com.alim.snaploader.Database.ApplicationData
-import com.alim.snaploader.R
 import com.alim.snaploader.Settings.OthersActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
@@ -196,26 +194,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         startActivityForResult(intent, 1)
     }
 
-    private fun launchDownloads() {
-        if (extractorAvailable(this)) {
-            val intent = Intent()
-            intent.putExtra(Intent.EXTRA_TEXT, applicationData.theme)
-            intent.component = ComponentName(
-                "com.alim.extractor",
-                "com.alim.extractor.DownloadsActivity"
-            )
-            startActivity(intent)
-        } else {
-            val intent = Intent(this, OthersActivity::class.java)
-            intent.putExtra("DIALOG",true)
-            startActivity(intent)
-            Toast.makeText(this, "Extension required.", Toast.LENGTH_SHORT).show()
-        }
-    }
-
     private fun extractorAvailable(context: Context): Boolean {
         return try {
-            context.packageManager.getApplicationInfo("com.alim.extractor", 0)
+            context.packageManager.getApplicationInfo("com.alim.extension", 0)
             true
         } catch (e: PackageManager.NameNotFoundException) {
             false

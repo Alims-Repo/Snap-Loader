@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:title="Player"
+        app:title="Player Settings"
         app:titleTextColor="@color/colorWhite"
         app:navigationIcon="@drawable/ic_arrow_back"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
@@ -32,7 +32,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Use external Player"
+                android:text="Use Exo Player"
                 android:textColor="?BlackWhite"
                 android:textSize="16sp"
                 android:layout_gravity="center_vertical"/>

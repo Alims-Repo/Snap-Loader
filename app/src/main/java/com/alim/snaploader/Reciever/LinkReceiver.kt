@@ -14,7 +14,11 @@ open class LinkReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         Log.println(Log.ASSERT,"TAG", "${intent.getIntExtra("Size", 0)}")
-        broadcastInterface.Cast(intent)
+        try {
+            broadcastInterface.Cast(intent)
+        } catch (e: Exception) {
+            Log.println(Log.ASSERT,"Receiver Ex", "$e")
+        }
     }
 
     fun register(cast: BroadcastInterface) {

@@ -40,7 +40,7 @@ class OthersActivity : AppCompatActivity() {
         val ID = 101
         createNotificationChannel()
         val builder = NotificationCompat.Builder(this, "DOWNLOAD").apply {
-            setContentTitle("Extractor")
+            setContentTitle("Extension")
             setOngoing(true)
             setContentText("Download in progress")
             setSmallIcon(R.drawable.file_download_white)
@@ -148,7 +148,7 @@ class OthersActivity : AppCompatActivity() {
                 uninstall.setOnClickListener {
                     val intent = Intent(Intent.ACTION_DELETE)
                     intent.putExtra(Intent.EXTRA_RETURN_RESULT, true)
-                    intent.data = Uri.parse("package:com.alim.extractor")
+                    intent.data = Uri.parse("package:com.alim.extension")
                     startActivityForResult(intent, uninstallCode)
                     Log.println(Log.ASSERT,"TAG", "Touch")
                     dialog.dismiss()
@@ -225,7 +225,7 @@ class OthersActivity : AppCompatActivity() {
 
     private fun extractorAvailable(context: Context): Boolean {
         return try {
-            context.packageManager.getApplicationInfo("com.alim.extractor", 0)
+            context.packageManager.getApplicationInfo("com.alim.extension", 0)
             true
         } catch (e: PackageManager.NameNotFoundException) {
             false

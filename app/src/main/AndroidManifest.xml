@@ -4,6 +4,7 @@
     package="com.alim.snaploader">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
@@ -20,10 +21,19 @@
         android:usesCleartextTraffic="true"
         tools:ignore="LockedOrientationActivity,UnusedAttribute">
 
+        <service
+            android:name=".Services.DownloadService"
+            android:enabled="true"
+            android:exported="false"/>
+
+        <activity
+            android:name=".EPlayerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
         <receiver
             android:name=".Reciever.LinkReceiver"
             android:enabled="true"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="CrackedURL" />
             </intent-filter>
@@ -37,7 +47,6 @@
                 <action android:name="CrackedURL" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Settings.VideoActivity"
             android:screenOrientation="portrait" />
@@ -45,7 +54,7 @@
             android:name=".DownloadsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".PlayerActivity"
+            android:name=".YPlayerActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Settings.OthersActivity"
@@ -70,7 +79,9 @@
             android:theme="@style/ReceiverTheme">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
@@ -79,6 +90,7 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -96,7 +108,6 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
-
     </application>
 
 </manifest>

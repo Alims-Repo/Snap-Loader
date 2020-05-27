@@ -33,8 +33,23 @@
             <RadioGroup
                 android:id="@+id/quality"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/loading"
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/error"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Error text"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center"/>
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
                     android:id="@+id/t8"
@@ -42,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
                     android:visibility="gone"
+                    android:layout_marginTop="20dp"
                     android:text="\tHigh (1080p)"/>
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
@@ -79,10 +95,11 @@
                 android:background="#888888"
                 android:layout_marginTop="20dp"/>
 
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/play_background"
                 android:theme="@style/AppTheme"
-                app:strokeColor="@color/colorAccentNight"
+                app:strokeColor="#803ED621"
                 android:textColor="@color/colorAccentNight"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"

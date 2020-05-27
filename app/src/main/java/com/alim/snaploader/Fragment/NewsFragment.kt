@@ -1,6 +1,5 @@
 package com.alim.snaploader.Fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,9 +9,7 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.alim.snaploader.PlayerActivity
 import com.alim.snaploader.Adapter.RecyclerAdapter
-import com.alim.snaploader.Interface.ClickInterface
 import com.alim.snaploader.Model.YoutubeData
 
 import com.alim.snaploader.R
