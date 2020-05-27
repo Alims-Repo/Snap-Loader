@@ -20,7 +20,26 @@
         android:usesCleartextTraffic="true"
         tools:ignore="LockedOrientationActivity,UnusedAttribute">
 
-        <activity android:name=".Settings.VideoActivity"
+        <receiver
+            android:name=".Reciever.LinkReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="CrackedURL" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".Settings.ContentActivity"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="CrackedURL" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Settings.VideoActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".DownloadsActivity"
@@ -51,9 +70,7 @@
             android:theme="@style/ReceiverTheme">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
@@ -79,6 +96,7 @@
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
+
     </application>
 
 </manifest>

@@ -1,9 +1,11 @@
 package com.alim.snaploader
 
 import android.app.Activity
+import android.content.ComponentName
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -22,6 +24,10 @@ class SettingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
         findViewById<Toolbar>(R.id.toolbar).setNavigationOnClickListener { finish() }
+
+        findViewById<FrameLayout>(R.id.content).setOnClickListener {
+            startActivity(Intent(this, ContentActivity::class.java))
+        }
 
         findViewById<FrameLayout>(R.id.theme).setOnClickListener {
             val intent = Intent(this, ThemeActivity::class.java)

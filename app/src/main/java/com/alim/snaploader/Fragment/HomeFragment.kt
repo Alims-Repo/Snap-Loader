@@ -52,17 +52,42 @@ class HomeFragment : Fragment() {
     }
 
     private val getData = Thread {
-        var URL = "http://youtube-scrape.herokuapp.com/api/search?q=&page=1"
-        //var URL = "https://www.googleapis.com/youtube/v3/search?part=snippet&regionCode=US&order=relevance&maxResults=50&key=AIzaSyAziPdq7YyRtGCFUefxD6wuST_s48Ihp-k"
+        //var URL = "http://youtube-scrape.herokuapp.com/api/search?q=&page=1"
+        var URL = "https://m.youtube.com/"
         val httpClient: HttpClient = DefaultHttpClient()
         val httpGet = HttpGet(URL)
         val response: HttpResponse = httpClient.execute(httpGet)
-        Log.println(Log.ASSERT,"RESPONSE", "response.toString()")
         val httpEntity: HttpEntity = response.entity
-        val json = JSONObject(EntityUtils.toString(httpEntity)).getJSONArray("results")
+        val fullData = EntityUtils.toString(httpEntity)
+        var tempData = fullData
+
+        for (x in 0..100) {
+            try {
+                val youtubeData = YoutubeData()
+                tempData = tempData.substring(tempData.indexOf("href=\"/watch?v=")+15)
+                val i = tempData.indexOf("\"")
+                youtubeData.id = tempData.substring(0,i)
+                tempData = tempData.substring(tempData.indexOf("\"https://",i)+1)
+                val j = tempData.indexOf("\"")
+                youtubeData.thumbnail = tempData.substring(0,j)
+                tempData = tempData.substring(i)
+                data.add(youtubeData)
+            } catch (e: Exception) {
+                Log.println(Log.ASSERT,"Exception","$e")
+            }
+        }
+        try {
+            activity!!.runOnUiThread {
+                progressBar.visibility = View.GONE
+                adapter.notifyDataSetChanged()
+            }
+        } catch (e: Exception) {
+            Log.println(Log.ASSERT, "Home Frag Ex", "$e")
+        }
+        //val json = JSONObject(EntityUtils.toString(httpEntity)).getJSONArray("results")
 
         //val tag = "Home Frag"
-        for (x in 0..20) {
+        /*for (x in 0..20) {
             try {
                 val youtubeData = YoutubeData()
 
@@ -95,6 +120,6 @@ class HomeFragment : Fragment() {
             }
         } catch (e: Exception) {
             Log.println(Log.ASSERT, "Home Frag Ex", "$e")
-        }
+        }*/
     }
 }

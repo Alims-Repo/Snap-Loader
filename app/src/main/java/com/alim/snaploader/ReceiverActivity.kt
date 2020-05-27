@@ -5,13 +5,17 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.RadioGroup
 import android.widget.Toast
+import com.alim.snaploader.Database.ApplicationData
+import com.alim.snaploader.Interface.BroadcastInterface
 import com.alim.snaploader.R
+import com.alim.snaploader.Reciever.LinkReceiver
 import com.google.android.material.radiobutton.MaterialRadioButton
 
 class ReceiverActivity : Activity() {
@@ -24,7 +28,7 @@ class ReceiverActivity : Activity() {
     var LT6 = ""
     var LAD = ""
 
-    var name = ""
+    //var name = ""
 
     lateinit var radioGroup: RadioGroup
     lateinit var T8: MaterialRadioButton
@@ -37,6 +41,9 @@ class ReceiverActivity : Activity() {
     lateinit var cancel: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val applicationData = ApplicationData(this)
+        if (applicationData.theme)
+            setTheme(R.style.ReceiverThemeDark)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reciever)
 
@@ -53,6 +60,14 @@ class ReceiverActivity : Activity() {
         cancel.setOnClickListener {
             finish()
         }
+
+        Log.println(Log.ASSERT,"Trigger","True")
+
+        LinkReceiver().register(object : BroadcastInterface {
+            override fun Cast(inte: Intent) {
+                youTube(inte)
+            }
+        })
 
         download.setOnClickListener {
             when(radioGroup.checkedRadioButtonId) {
@@ -74,9 +89,19 @@ class ReceiverActivity : Activity() {
                     "com.alim.extractor.ExtractorActivity"
                 )
                 if (Link != null && (Link.contains("://youtu.be/") || Link.contains("youtube.com/watch?v="))) {
-                    intent.putExtra(Intent.EXTRA_TEXT, "YOUTUBE")
-                    intent.putExtra("LINK", Link)
-                    startActivityForResult(intent, 1)
+                    val intent = Intent()
+                    intent.action = Intent.ACTION_MAIN
+                    //intent.type = "alim/code"
+                    intent.component = ComponentName(
+                        "com.alim.extension",
+                        "com.alim.extension.ExtractService"
+                    )
+                    intent.putExtra(Intent.EXTRA_TEXT, Link)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+                        startForegroundService(intent)
+                    else
+                        startService(intent)
+                    Log.println(Log.ASSERT,"Launch","True")
                 } else if (Link != null && Link.contains("://www.facebook.com/")) {
                     intent.putExtra(Intent.EXTRA_TEXT, "FACEBOOK")
                     intent.putExtra("LINK", Link)
@@ -106,14 +131,14 @@ class ReceiverActivity : Activity() {
         )
         intent.putExtra(Intent.EXTRA_TEXT, "DOWNLOAD")
         intent.putExtra("LINK", url)
-        intent.putExtra("NAME", name+ex)
+        //intent.putExtra("NAME", name+ex)
         startActivity(intent)
         finish()
     }
 
     private fun youTube(data: Intent) {
         Log.println(Log.ASSERT, "Done", "")
-        name = data.getStringExtra("NAME")!!
+        //name = data.getStringExtra("NAME")!!
         for (i in 0 until data.getIntExtra("Size", 0)) {
             try {
                 val Tag = data.getIntExtra("Tag : $i", 0)
@@ -142,15 +167,9 @@ class ReceiverActivity : Activity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if (requestCode == 1)
-            if (resultCode == RESULT_OK && data != null) youTube(data) else finish()
-        super.onActivityResult(requestCode, resultCode, data)
-    }
-
     private fun extractorAvailable(context: Context): Boolean {
         return try {
-            context.packageManager.getApplicationInfo("com.alim.extractor", 0)
+            context.packageManager.getApplicationInfo("com.alim.extension", 0)
             true
         } catch (e: PackageManager.NameNotFoundException) {
             false

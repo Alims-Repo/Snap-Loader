@@ -31,7 +31,7 @@ class RecyclerAdapter(context: Context,
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val layout: LinearLayout = view.findViewById(R.id.layout)
-        val title: TextView = view.findViewById(R.id.title)
+        //val title: TextView = view.findViewById(R.id.title)
         val thumb: ImageView = view.findViewById(R.id.thumb)
     }
 
@@ -44,7 +44,7 @@ class RecyclerAdapter(context: Context,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         try {
             Glide.with(mContext).load(data[position].thumbnail).centerCrop().into(holder.thumb)
-            holder.title.text = data[position].title
+            //holder.title.text = data[position].title
         } catch (e: Exception) {
             Log.println(Log.ASSERT,"Ex Home Adapter","$e")
         }
