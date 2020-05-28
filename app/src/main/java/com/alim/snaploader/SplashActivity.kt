@@ -24,10 +24,9 @@ import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.FileProvider
-import com.alim.snaploader.BuildConfig
 import com.alim.snaploader.Config.AppConfig
 import com.alim.snaploader.Database.ApplicationData
-import com.alim.snaploader.R
+import com.alim.snaploader.Services.BackgroundService
 import org.apache.http.client.methods.HttpGet
 import org.apache.http.impl.client.DefaultHttpClient
 import org.apache.http.util.EntityUtils
@@ -336,6 +335,7 @@ class SplashActivity : AppCompatActivity() {
         params_prog.width = (screenWidth / 3)
 
         Thread(threadCheck).start()
+
     }
 
     private fun install(path: String) {

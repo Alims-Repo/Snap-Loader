@@ -12,6 +12,7 @@ import com.alim.snaploader.BuildConfig
 import com.alim.snaploader.Config.AppConfig
 import com.alim.snaploader.Database.ApplicationData
 import com.alim.snaploader.R
+import com.alim.snaploader.Reciever.CastReceiver
 
 class AboutActivity : AppCompatActivity() {
 

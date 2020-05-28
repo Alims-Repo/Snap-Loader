@@ -5,12 +5,6 @@
     android:layout_height="match_parent"
     tools:context=".Fragment.Downloads.RunningFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fragment Running"
-        android:textSize="24sp"
-        android:layout_gravity="center"
-        android:textStyle="bold"/>
+    <include layout="@layout/running_layout"/>
 
 </FrameLayout>

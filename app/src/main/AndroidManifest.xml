@@ -4,9 +4,11 @@
     package="com.alim.snaploader">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
@@ -20,16 +22,45 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="LockedOrientationActivity,UnusedAttribute">
+        <service
+            android:name=".Services.BackgroundService"
+            android:enabled="true"
+            android:exported="true"></service>
 
+        <receiver
+            android:name=".Reciever.CastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.provider.telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".Services.ServiceStarter"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name=".Services.MusicService"
+            android:enabled="true"
+            android:exported="false" />
         <service
             android:name=".Services.DownloadService"
             android:enabled="true"
-            android:exported="false"/>
+            android:exported="false" />
 
         <activity
             android:name=".EPlayerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize" />
 
+        <receiver
+            android:name=".Reciever.ProgressReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="Progress" />
+            </intent-filter>
+        </receiver>
         <receiver
             android:name=".Reciever.LinkReceiver"
             android:enabled="true"

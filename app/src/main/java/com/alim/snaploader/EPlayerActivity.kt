@@ -19,7 +19,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.alim.snaploader.Database.ApplicationData
-import com.alim.snaploader.Interface.BroadcastInterface
+import com.alim.snaploader.Interface.LinkInterface
 import com.alim.snaploader.Reciever.LinkReceiver
 import com.google.android.exoplayer2.ExoPlayerFactory
 import com.google.android.exoplayer2.Player
@@ -68,7 +68,7 @@ class EPlayerActivity : AppCompatActivity() {
         fullscreenButton = video_view.findViewById(R.id.exo_fullscreen_icon)
         fullscreenButton.setOnClickListener { fullScreen() }
 
-        LinkReceiver().register(object : BroadcastInterface {
+        LinkReceiver().register(object : LinkInterface {
             override fun Cast(inte: Intent) {
                 if (inte.getStringExtra("ERROR")!=null) finish()
                 else youTube(inte)

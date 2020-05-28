@@ -1,6 +1,7 @@
 package com.alim.snaploader.Services
 
 import android.app.*
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.os.Build
@@ -18,9 +19,12 @@ import java.net.URL
 
 class DownloadService : Service() {
 
+    companion object {
+        var ID = 101
+        var running = false
+    }
     val CHANNEL_ID = "DOWNLOAD"
     var show = true
-    var ID = 101
 
     override fun onBind(intent: Intent): IBinder {
         TODO("Return the communication channel to the service.")
@@ -31,6 +35,7 @@ class DownloadService : Service() {
         createNotificationChannel()
         if (intent!!.extras != null) {
 
+            //startService(Intent(this, ServiceStarter::class.java))
             val Url = intent.getStringExtra("LINK")
             val name = intent.getStringExtra("NAME")
 
@@ -38,7 +43,6 @@ class DownloadService : Service() {
                 0, Intent(this, DownloadsActivity::class.java), 0)
             val notification = NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle(name)
-                .setContentText("0 KBps")
                 .setOngoing(true)
                 .setSmallIcon(R.drawable.file_download_white)
                 .setContentIntent(pendingIntent)
@@ -46,11 +50,18 @@ class DownloadService : Service() {
             val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
             Thread {
+                val NotificatioID = ID
                 var input: InputStream? = null
                 var output: OutputStream? = null
                 var connection: HttpURLConnection? = null
                 try {
                     val url = URL(Url)
+                    val inten = Intent("Progress")
+                    inten.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES)
+                    inten.component = ComponentName(
+                        "com.alim.snaploader",
+                        "com.alim.snaploader.Reciever.ProgressReceiver"
+                    )
                     connection = url.openConnection() as HttpURLConnection
                     connection.connect()
                     val fileLength: Int = connection.contentLength
@@ -65,31 +76,36 @@ class DownloadService : Service() {
                         total += count.toLong()
                         if (show) {
                             show = false
+                            inten.putExtra("PROGRESS", ((total*100)/fileLength).toInt())
+                            sendBroadcast(inten)
                             notification.setProgress(100, ((total*100)/fileLength).toInt(), false)
-                            manager.notify(ID, notification.build())
+                            manager.notify(NotificatioID, notification.build())
                             Handler(Looper.getMainLooper()).postDelayed({
                                 show = true
-                            }, 750)
+                            }, 500)
                         }
                         output.write(data, 0, count)
                     }
+                    inten.putExtra("PROGRESS", 100)
+                    sendBroadcast(inten)
                     notification.setSmallIcon(R.drawable.check_circle_white)
                     notification.setOngoing(false)
                     notification.setContentText("Download complete")
                         .setProgress(0, 0, false)
-                    manager.notify(ID, notification.build())
+                    manager.notify(NotificatioID, notification.build())
                 } catch (e: Exception) {
                     Log.println(Log.ASSERT,"ERROR", e.toString())
                     notification.setProgress(0, 0, false)
                     notification.setOngoing(false)
                     notification.setSmallIcon(R.drawable.ic_error_white)
                     notification.setContentTitle("Error : $e")
-                    manager.notify(ID, notification.build())
+                    manager.notify(NotificatioID, notification.build())
                 } finally {
+                    running = false
                     try {
                         output?.close()
                         input?.close()
-                        stopForeground(false)
+                        stopForeground(true)
                     } catch (e: IOException) {
                         Log.println(Log.ASSERT,"ERROR", e.toString())
                     }
@@ -97,8 +113,10 @@ class DownloadService : Service() {
                 }
             }.start()
 
-            if (!isServiceRunningInForeground(this, DownloadService::class.java))
+            if (!running) {
+                running = true
                 startForeground(ID, notification.build())
+            }
         }
         return START_NOT_STICKY
     }
@@ -115,7 +133,7 @@ class DownloadService : Service() {
         }
     }
 
-    private fun isServiceRunningInForeground(context: Context, serviceClass: Class<*>): Boolean {
+    /*private fun isServiceRunningInForeground(context: Context, serviceClass: Class<*>): Boolean {
         val manager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
         for (service in manager.getRunningServices(Int.MAX_VALUE)) {
             if (serviceClass.name == service.service.className) {
@@ -123,5 +141,5 @@ class DownloadService : Service() {
             }
         }
         return false
-    }
+    }*/
 }

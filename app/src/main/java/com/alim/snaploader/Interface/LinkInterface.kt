@@ -2,6 +2,6 @@ package com.alim.snaploader.Interface
 
 import android.content.Intent
 
-interface BroadcastInterface {
+interface LinkInterface {
     fun Cast(inte: Intent)
 }

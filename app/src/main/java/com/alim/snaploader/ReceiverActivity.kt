@@ -1,5 +1,6 @@
 package com.alim.snaploader
 
+import android.Manifest
 import android.app.Activity
 import android.content.ComponentName
 import android.content.Context
@@ -10,9 +11,9 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.core.app.ActivityCompat
 import com.alim.snaploader.Database.ApplicationData
-import com.alim.snaploader.Interface.BroadcastInterface
-import com.alim.snaploader.R
+import com.alim.snaploader.Interface.LinkInterface
 import com.alim.snaploader.Reciever.LinkReceiver
 import com.alim.snaploader.Services.DownloadService
 import com.google.android.material.radiobutton.MaterialRadioButton
@@ -29,6 +30,7 @@ class ReceiverActivity : Activity() {
 
     var name = ""
 
+    private val myPermission = 105
     lateinit var radioGroup: RadioGroup
     lateinit var T8: MaterialRadioButton
     lateinit var S2: MaterialRadioButton
@@ -62,7 +64,7 @@ class ReceiverActivity : Activity() {
 
         Log.println(Log.ASSERT,"Trigger","True")
 
-        LinkReceiver().register(object : BroadcastInterface {
+        LinkReceiver().register(object : LinkInterface {
             override fun Cast(inte: Intent) {
                 findViewById<ProgressBar>(R.id.loading).visibility = View.GONE
                 if (inte.getStringExtra("ERROR")!=null) {
@@ -74,12 +76,11 @@ class ReceiverActivity : Activity() {
         })
 
         download.setOnClickListener {
-            when(radioGroup.checkedRadioButtonId) {
-                R.id.t8 ->  download(LT8, ".mp4")
-                R.id.s2 -> download(LS2, ".mp4")
-                R.id.t6 ->  download(LT6, ".mp4")
-                R.id.ad -> download(LAD, ".mp3")
-            }
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+                myPermission
+            )
         }
 
         if (extractorAvailable(this)) {
@@ -172,6 +173,24 @@ class ReceiverActivity : Activity() {
             true
         } catch (e: PackageManager.NameNotFoundException) {
             false
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            myPermission -> {
+                if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
+                    when(radioGroup.checkedRadioButtonId) {
+                        R.id.t8 ->  download(LT8, ".mp4")
+                        R.id.s2 -> download(LS2, ".mp4")
+                        R.id.t6 ->  download(LT6, ".mp4")
+                        R.id.ad -> download(LAD, ".mp3")
+                    }
+                }
+                else { Toast.makeText(this,"Permission Denied",Toast.LENGTH_LONG).show() }
+                return
+            }
         }
     }
 }

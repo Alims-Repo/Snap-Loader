@@ -27,6 +27,9 @@ import androidx.viewpager.widget.ViewPager
 import com.alim.snaploader.Adapter.MainPagerAdapter
 import com.alim.snaploader.Config.AppConfig
 import com.alim.snaploader.Database.ApplicationData
+import com.alim.snaploader.Services.BackgroundService
+import com.alim.snaploader.Services.DownloadService
+import com.alim.snaploader.Services.ServiceStarter
 import com.alim.snaploader.Settings.OthersActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
