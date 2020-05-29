@@ -13,8 +13,8 @@ android {
         applicationId "com.alim.snaploader"
         minSdkVersion 22
         targetSdkVersion 29
-        versionCode 2
-        versionName "2.9.4 Beta"
+        versionCode 3
+        versionName "2.9.5 Beta"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
