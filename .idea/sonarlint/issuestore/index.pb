@@ -45,8 +45,6 @@ i
 9app/src/main/java/com/alim/snaploader/ReceiverActivity.kt,9\1\91226a7bbbb8f0c949a4be5f3d15773c36ac591d
 i
 9app/src/main/java/com/alim/snaploader/SettingsActivity.kt,c\f\cff91ae34321c48eef8501bff4cf9c7185b84c5d
-Q
-!app/src/main/res/anim/fade_in.xml,8\1\8100e04b0cee48bb99d93aca317b87373fbba39a
 R
 "app/src/main/res/anim/fade_out.xml,a\2\a243b0ace91a2af1cb75c05bc2f3b65c77d7dfe3
 `
@@ -115,8 +113,6 @@ _
 0app/src/main/res/layout/fragment_interrupted.xml,3\1\31b46f515c51175ed2e105ba326a9d8585f6b94e
 Y
 )app/src/main/res/layout/fragment_main.xml,8\c\8ca365160a3b45bd5252ffc369aa8940523a333d
-Y
-)app/src/main/res/layout/youtube_thumb.xml,4\e\4e8c09ac94a7b8e4f8e7e1c516d68501b4092f75
 R
 "app/src/main/res/menu/nav_menu.xml,1\9\1928ca19d0bbe0ca4797b6a9c10445b4646ddced
 P
@@ -218,8 +214,6 @@ Z
 *app/src/main/res/layout/activity_theme.xml,f\4\f4b21410433994fc2f83b5fcaa00471d44195433
 Z
 *app/src/main/res/layout/activity_video.xml,1\9\195b69a3533dc3349a07a3de07ff32290e5d3f19
-]
--app/src/main/res/layout/activity_y_player.xml,b\9\b99af99ffa499bc86006df390c6d91907abf157b
 e
 5app/src/main/res/layout/exo_playback_control_view.xml,f\d\fd9018617335e4f77b81e710da12479051178bcf
 S
@@ -232,3 +226,15 @@ t
 Dapp/src/main/java/com/alim/snaploader/Interface/ProgressInterface.kt,f\4\f4cf3c38730430a2aed0bb9ab10ab347f0d24a5c
 r
 Bapp/src/main/java/com/alim/snaploader/Reciever/ProgressReceiver.kt,8\6\86d333aeeaf48809001a8bbd777f910483f7eec3
+p
+@app/src/main/java/com/alim/snaploader/Interface/CastInterface.kt,6\3\63744e4b1d3fa9f011dc1b411bdb3811098fb3a9
+n
+>app/src/main/java/com/alim/snaploader/Reciever/CastReceiver.kt,1\4\14f6412880075e3e0864d70a0da5c0bc48936fb7
+s
+Capp/src/main/java/com/alim/snaploader/Services/BackgroundService.kt,2\5\25ef09a8ef82efc2634b16f3bed2d35dbcdb0a7a
+p
+@app/src/main/java/com/alim/snaploader/Services/ServiceStarter.kt,a\6\a6ca2cc0e161806a4b093c6de7ea7d877a81d615
+\
+,app/src/main/res/layout/fragment_running.xml,5\5\555cb2cd2e229a9862bc2483f9e8a31fe4eb6599
+Z
+*app/src/main/res/layout/running_layout.xml,4\2\422bfe3f988582889723ff1624a6f09ff352234b

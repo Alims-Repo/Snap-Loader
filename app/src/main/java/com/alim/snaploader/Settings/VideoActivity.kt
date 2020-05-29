@@ -1,5 +1,7 @@
 package com.alim.snaploader.Settings
 
+import android.content.Context
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
@@ -21,10 +23,22 @@ class VideoActivity : AppCompatActivity() {
 
         val switchPlayer = findViewById<SwitchMaterial>(R.id.external_switch)
 
-        switchPlayer.isChecked = applicationData.externalPlayer
+        if (extractorAvailable(this))
+            switchPlayer.isChecked = applicationData.externalPlayer
+        else
+            switchPlayer.isClickable = false
 
         switchPlayer.setOnClickListener {
             applicationData.externalPlayer = switchPlayer.isChecked
+        }
+    }
+
+    private fun extractorAvailable(context: Context): Boolean {
+        return try {
+            context.packageManager.getApplicationInfo("com.alim.extractor", 0)
+            true
+        } catch (e: PackageManager.NameNotFoundException) {
+            false
         }
     }
 }

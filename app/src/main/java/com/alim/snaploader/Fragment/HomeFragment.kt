@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alim.snaploader.Model.YoutubeData
 import com.alim.snaploader.R
 import com.alim.snaploader.Adapter.RecyclerAdapter
+import com.alim.snaploader.Config.ConstantConfig
 import kotlinx.android.synthetic.main.fragment_main.*
 import org.apache.http.HttpEntity
 import org.apache.http.HttpResponse
@@ -52,30 +53,40 @@ class HomeFragment : Fragment() {
     }
 
     private val getData = Thread {
-        //var URL = "http://youtube-scrape.herokuapp.com/api/search?q=&page=1"
-        var URL = "https://m.youtube.com/"
         val httpClient: HttpClient = DefaultHttpClient()
-        val httpGet = HttpGet(URL)
+        val httpGet = HttpGet(ConstantConfig(activity!!).getContent("home"))
         val response: HttpResponse = httpClient.execute(httpGet)
         val httpEntity: HttpEntity = response.entity
-        val fullData = EntityUtils.toString(httpEntity)
-        var tempData = fullData
+        //Game Starts Here
+        val json = JSONObject(EntityUtils.toString(httpEntity))
+        try {
+            val nextToken = json.getString("nextPageToken")
+        } catch (e: Exception) {}
+        val dataPerPage = json.getJSONObject("pageInfo").getInt("resultsPerPage")-1
+        val jsonA = json.getJSONArray("items")
 
-        for (x in 0..100) {
+        //Log.println(Log.ASSERT,"Items", jsonA.toString())
+
+        for (x in 0..dataPerPage) {
             try {
                 val youtubeData = YoutubeData()
-                tempData = tempData.substring(tempData.indexOf("href=\"/watch?v=")+15)
-                val i = tempData.indexOf("\"")
-                youtubeData.id = tempData.substring(0,i)
-                tempData = tempData.substring(tempData.indexOf("\"https://",i)+1)
-                val j = tempData.indexOf("\"")
-                youtubeData.thumbnail = tempData.substring(0,j)
-                tempData = tempData.substring(i)
+                val obj = jsonA.getJSONObject(x)
+                val snip = jsonA.getJSONObject(x).getJSONObject("snippet")
+
+                youtubeData.title = snip.getString("title")
+                youtubeData.date = snip.getString("publishedAt")
+                youtubeData.channelI = snip.getString("channelId")
+                youtubeData.channelN = snip.getString("channelTitle")
+                youtubeData.description = snip.getString("description")
+                youtubeData.id = obj.getString("id")
+                youtubeData.thumbnail = snip.getJSONObject("thumbnails").getJSONObject("high").getString("url")
+
                 data.add(youtubeData)
-            } catch (e: Exception) {
-                Log.println(Log.ASSERT,"Exception","$e")
+            } catch (e: java.lang.Exception) {
+                Log.println(Log.ASSERT,"Exception", e.toString())
             }
         }
+
         try {
             activity!!.runOnUiThread {
                 progressBar.visibility = View.GONE
@@ -84,42 +95,5 @@ class HomeFragment : Fragment() {
         } catch (e: Exception) {
             Log.println(Log.ASSERT, "Home Frag Ex", "$e")
         }
-        //val json = JSONObject(EntityUtils.toString(httpEntity)).getJSONArray("results")
-
-        //val tag = "Home Frag"
-        /*for (x in 0..20) {
-            try {
-                val youtubeData = YoutubeData()
-
-                val son = json.getJSONObject(x).getJSONObject("video")
-
-                //Add data to Data Model
-                youtubeData.id = son.getString("id").toString()
-                youtubeData.title = son.getString("title").toString()
-                youtubeData.length = son.getString("duration").toString()
-                youtubeData.views = son.getString("upload_date").toString()
-                youtubeData.thumbnail = son.getString("thumbnail_src").toString()
-
-                /**Log.println(Log.ASSERT, tag, son.getString("id").toString())
-                Log.println(Log.ASSERT, tag, son.getString("url").toString())
-                Log.println(Log.ASSERT, tag, son.getString("title").toString())
-                Log.println(Log.ASSERT, tag, son.getString("duration").toString())
-                Log.println(Log.ASSERT, tag, son.getString("upload_date").toString())
-                Log.println(Log.ASSERT, tag, son.getString("thumbnail_src").toString())*/
-
-                data.add(youtubeData)
-
-            } catch (e: Exception) {
-                Log.println(Log.ASSERT, "Home Frag Ex", "$e")
-            }
-        }
-        try {
-            activity!!.runOnUiThread {
-                progressBar.visibility = View.GONE
-                adapter.notifyDataSetChanged()
-            }
-        } catch (e: Exception) {
-            Log.println(Log.ASSERT, "Home Frag Ex", "$e")
-        }*/
     }
 }

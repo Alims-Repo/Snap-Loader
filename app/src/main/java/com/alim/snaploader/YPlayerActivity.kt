@@ -28,7 +28,6 @@ class YPlayerActivity : YouTubeBaseActivity(), YouTubePlayer.OnInitializedListen
         youTubeView =  findViewById(R.id.youtube_view)
         youTubeView.initialize(AppConfig().YOUTUBE_API_KEY, this)
 
-        view.text = intent.getStringExtra("VIEWS")
         title.text = intent.getStringExtra("TITLE")
     }
 

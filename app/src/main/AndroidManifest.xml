@@ -22,10 +22,12 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="LockedOrientationActivity,UnusedAttribute">
+        <activity android:name=".MotionActivity"></activity>
+
         <service
             android:name=".Services.BackgroundService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
 
         <receiver
             android:name=".Reciever.CastReceiver"

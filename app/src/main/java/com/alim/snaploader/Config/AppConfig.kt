@@ -5,7 +5,7 @@ import android.os.Environment
 class AppConfig {
 
     val extensionPackageName = "com.alim.extension"
-    val YOUTUBE_API_KEY = "AIzaSyCvIIJmyv8fVIu-VIVOBkYaaXYo-AU8CcE"
+    val YOUTUBE_API_KEY = "AIzaSyBGmwob2aK2oQ15p6doEdw5D_TCKs1K0qY"
     val downloadPath = Environment.getExternalStorageDirectory().path+"/Snap Loader/"
 
     /**Share Link*/

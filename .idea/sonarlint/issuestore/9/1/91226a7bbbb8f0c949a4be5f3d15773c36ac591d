@@ -1,0 +1,7 @@
+
+okotlin:S3776,"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(¶Á»¬şÿÿÿÿ
+mkotlin:S100D"JRename function "Cast" to match the regular expression ^[a-z][a-zA-Z0-9]*$(ó´Íöùÿÿÿÿ8´ÖÈ¥.
+jkotlin:S117"RRename this local variable to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(†â«
+okotlin:S117X"RRename this local variable to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(‘™ë
+8Ìù¥¥.
+vkotlin:S117‘"RRename this local variable to match the regular expression "^[_a-z][a-zA-Z0-9]*$".(ô¯æÆıÿÿÿÿ8Ìù¥¥.

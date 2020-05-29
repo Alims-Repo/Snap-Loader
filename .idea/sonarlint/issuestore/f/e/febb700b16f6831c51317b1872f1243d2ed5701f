@@ -1,0 +1,44 @@
+
+j	java:S116"URename this field "VideoTitle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á£ª
+G
+java:S1481-",Remove this unused "success" local variable.(‚§Íûÿÿÿÿ
+h	java:S116"SRename this field "VideoURL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Êú¸š
+I
+java:S1068".Remove this unused "DownLoadID" private field.(à¢£Êüÿÿÿÿ
+M
+java:S1128"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ
+b
+java:S22599"GA "NullPointerException" could be thrown; "subFolder" is nullable here.(±»ôƒşÿÿÿÿ
+o	java:S116"URename this field "DownLoadID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à¢£Êüÿÿÿÿ
+?
+java:S1148¿"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ğº°³
+9
+java:S3398Ü"Move this method into "Data".(µÀ‰üÿÿÿÿ
+Q	java:S125a"<This block of commented-out lines of code should be removed.(—›ûî
+J
+java:S1066O"/Merge this if statement with the enclosing one.(ó§áıÿÿÿÿ
+S
+java:S2589È"7Remove this expression which always evaluates to "true"(§µ—¬ıÿÿÿÿ
+z
+java:S1149J"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(¨âàøÿÿÿÿ
+m	java:S116"SRename this field "FinalURL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–¤˜şÿÿÿÿ
+A
+java:S1128"+Remove this unused import 'java.util.Date'.(¸…¼ü
+B
+java:S14812"-Remove this unused "success1" local variable.(˜Ç¤(
+H
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ
+R
+java:S18546"<Remove this useless assignment to local variable "success1".(à¤‹Ä
+8
+java:S3398("Move this method into "Data".(ö–Šèÿÿÿÿÿ
+h
+java:S3776B"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(öÂÁ¦
+z
+java:S1149J"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(¨âàøÿÿÿÿ
+U
+java:S4973È"9Use the "equals" method if value comparison was intended.(§µ—¬ıÿÿÿÿ
+Q
+java:S1854/";Remove this useless assignment to local variable "success".(Ø¯ËÊ
+c	java:S100%"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÈÙÀ

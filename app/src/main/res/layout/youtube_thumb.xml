@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground"
@@ -13,16 +12,32 @@
 
     <ImageView
         android:id="@+id/thumb"
-        android:layout_width="130dp"
-        android:scaleType="fitCenter"
-        android:layout_height="80dp" />
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:scaleType="fitCenter" />
 
     <TextView
         android:id="@+id/title"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
+        android:text="Title of a video"
+        android:textColor="?BlackWhite"
+        android:textSize="18sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:maxLines="3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/channel"
+        android:layout_width="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_height="wrap_content"
+        android:text="Channel Name Here"
+        android:layout_marginBottom="10dp"/>
 
 </LinearLayout>

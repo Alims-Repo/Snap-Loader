@@ -1,0 +1,27 @@
+
+h	java:S116"SRename this field "VideoURL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Êú¸š
+V	java:S125b"<This block of commented-out lines of code should be removed.(ÁøÈìüÿÿÿÿ
+Q
+java:S1854,";Remove this useless assignment to local variable "success".(Ø¯ËÊ
+9
+java:S3398¥"Move this method into "Data".(µÀ‰üÿÿÿÿ
+K
+java:S1481•"/Remove this unused "downLoadID" local variable.(ª‰€âøÿÿÿÿ
+j	java:S116"URename this field "VideoTitle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á£ª
+R
+java:S18543"<Remove this useless assignment to local variable "success1".(à¤‹Ä
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ðº°³
+B
+java:S1481/"-Remove this unused "success1" local variable.(˜Ç¤(
+G
+java:S1481*",Remove this unused "success" local variable.(‚§žÍûÿÿÿÿ
+V	java:S125j"<This block of commented-out lines of code should be removed.(¡Ñ™æûÿÿÿÿ
+Q	java:S125l"<This block of commented-out lines of code should be removed.(Ô·¸ê
+V	java:S125`"<This block of commented-out lines of code should be removed.(ÁøÈìüÿÿÿÿ
+V	java:S125\"<This block of commented-out lines of code should be removed.(ÁøÈìüÿÿÿÿ
+\
+java:S1192;"FDefine a constant instead of duplicating this literal "https" 4 times.(ù°·
+Z
+java:S1854•">Remove this useless assignment to local variable "downLoadID".(ª‰€âøÿÿÿÿ
+b
+java:S22596"GA "NullPointerException" could be thrown; "subFolder" is nullable here.(±»ôƒþÿÿÿÿ

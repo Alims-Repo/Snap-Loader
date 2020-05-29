@@ -1,0 +1,28 @@
+
+b
+java:S1192S"GDefine a constant instead of duplicating this literal "No URL" 4 times.(’á»¦ÿÿÿÿÿ
+B
+java:S1481."-Remove this unused "success1" local variable.(˜Ç¤(
+Q
+java:S1854+";Remove this useless assignment to local variable "success".(Ø¯ËÊ
+h	java:S116"SRename this field "VideoURL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Êú¸š
+^
+java:S3973›"GUse indentation to denote the code conditionally executed by this "if".(¸Â² 
+R
+java:S18542"<Remove this useless assignment to local variable "success1".(à¤‹Ä
+
+java:S2681"†This line will not be executed conditionally; only the first line of this 2-line block will be. The rest will execute unconditionally.(İ‰‰ä
+G
+java:S1481)",Remove this unused "success" local variable.(‚§Íûÿÿÿÿ
+9
+java:S3398¢"Move this method into "Data".(µÀ‰üÿÿÿÿ
+
+java:S2681•"†This line will not be executed conditionally; only the first line of this 2-line block will be. The rest will execute unconditionally.(ÆÆ­Ö
+^
+java:S3973“"GUse indentation to denote the code conditionally executed by this "if".(¸Â² 
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ğº°³
+Z
+java:S1854‘">Remove this useless assignment to local variable "downLoadID".(ª‰€âøÿÿÿÿ
+j	java:S116"URename this field "VideoTitle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á£ª
+K
+java:S1481‘"/Remove this unused "downLoadID" local variable.(ª‰€âøÿÿÿÿ

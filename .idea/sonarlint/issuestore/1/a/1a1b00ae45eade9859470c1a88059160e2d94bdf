@@ -1,0 +1,19 @@
+
+P
+java:S1068".Remove this unused "DownLoadID" private field.(ΰΆ£Κόÿÿÿÿ8οε£¥.
+X
+java:S1854+";Remove this useless assignment to local variable "success".(Ψ―ΛΚ8οε£¥.
+N
+java:S1481)",Remove this unused "success" local variable.(‚§Νϋÿÿÿÿ8οε£¥.
+q	java:S116"URename this field "VideoTitle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Α£ª8οε£¥.
+@
+java:S3398¥"Move this method into "Data".(µΐ‰όÿÿÿÿ8οε£¥.
+i
+java:S1192T"GDefine a constant instead of duplicating this literal "No URL" 4 times.(’α»¦ÿÿÿÿÿ8οε£¥.
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(πΊ°³8οε£¥.
+Y
+java:S18542"<Remove this useless assignment to local variable "success1".(ΰ¤‹Δ8οε£¥.
+v	java:S116"URename this field "DownLoadID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ΰΆ£Κόÿÿÿÿ8οε£¥.
+I
+java:S1481."-Remove this unused "success1" local variable.(Η¤(8οε£¥.
+o	java:S116"SRename this field "VideoURL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ΚϊΈ8οε£¥.

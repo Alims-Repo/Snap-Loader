@@ -1,7 +1,6 @@
 package com.alim.snaploader.Adapter
 
 import android.annotation.SuppressLint
-import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -11,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.Toast
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.alim.snaploader.YPlayerActivity
 import com.alim.snaploader.Database.ApplicationData
@@ -30,8 +29,9 @@ class RecyclerAdapter(context: Context,
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val layout: LinearLayout = view.findViewById(R.id.layout)
-        //val title: TextView = view.findViewById(R.id.title)
+        val title: TextView = view.findViewById(R.id.title)
         val thumb: ImageView = view.findViewById(R.id.thumb)
+        val channel: TextView = view.findViewById(R.id.channel)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -43,7 +43,8 @@ class RecyclerAdapter(context: Context,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         try {
             Glide.with(mContext).load(data[position].thumbnail).centerCrop().into(holder.thumb)
-            //holder.title.text = data[position].title
+            holder.channel.text = data[position].channelN
+            holder.title.text = data[position].title
         } catch (e: Exception) {
             Log.println(Log.ASSERT,"Ex Home Adapter","$e")
         }
@@ -56,9 +57,7 @@ class RecyclerAdapter(context: Context,
                 Intent(mContext, YPlayerActivity::class.java)
             intent.putExtra(Intent.EXTRA_TEXT, "YOUTUBE")
             intent.putExtra("LINK", data[position].id)
-            intent.putExtra("VIEWS", data[position].views)
             intent.putExtra("TITLE", data[position].title)
-            intent.putExtra("LENGTH", data[position].length)
             mContext.startActivity(intent)
         }
     }

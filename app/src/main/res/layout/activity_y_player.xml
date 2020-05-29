@@ -8,20 +8,20 @@
     tools:context=".YPlayerActivity"
     android:orientation="vertical">
 
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:id="@+id/youtube_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:title="Downloads"
+        app:title="Youtube Player"
         app:titleTextColor="@color/colorWhite"
         app:navigationIcon="@drawable/ic_arrow_back"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    <com.google.android.youtube.player.YouTubePlayerView
-        android:id="@+id/youtube_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/title"

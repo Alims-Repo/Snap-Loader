@@ -1,6 +1,5 @@
 package com.alim.snaploader
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,7 +7,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.viewpager.widget.ViewPager
 import com.alim.snaploader.Adapter.DownloadsPagerAdapter
 import com.alim.snaploader.Database.ApplicationData
-import com.alim.snaploader.R
 import com.google.android.material.tabs.TabLayout
 
 class DownloadsActivity : AppCompatActivity() {

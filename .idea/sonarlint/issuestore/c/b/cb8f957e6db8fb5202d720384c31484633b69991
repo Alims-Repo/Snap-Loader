@@ -1,0 +1,36 @@
+
+t
+java:S3776F"RRefactor this method to reduce its Cognitive Complexity from 37 to the 15 allowed.(ÄŒ¯…úÿÿÿÿ8‹€§£¥.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ðº°³
+h
+java:S3027}"FPut single-quotes around '}' to use the faster "indexOf(char)" method.(°Ìš¶üÿÿÿÿ8‹€§£¥.
+I
+java:S1481."-Remove this unused "success1" local variable.(˜Ç¤(8‹€§£¥.
+R
+java:S1481¶"/Remove this unused "downLoadID" local variable.(ª‰€âøÿÿÿÿ8‹€§£¥.
+i
+java:S22595"GA "NullPointerException" could be thrown; "subFolder" is nullable here.(±»ôƒþÿÿÿÿ8‹€§£¥.
+i
+java:S3027}"GPut single-quotes around '\"' to use the faster "indexOf(char)" method.(°Ìš¶üÿÿÿÿ8‹€§£¥.
+W
+java:S1141j"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8‹€§£¥.
+j	java:S116"URename this field "VideoTitle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á£ª
+e
+java:S3027…"GPut single-quotes around '\"' to use the faster "indexOf(char)" method.(‚ŸÍª8‹€§£¥.
+@
+java:S3398Æ"Move this method into "Data".(µÀ‰üÿÿÿÿ8‹€§£¥.
+o	java:S116"SRename this field "VideoURL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Êú¸š8‹€§£¥.
+e
+java:S3027€"GPut single-quotes around '\"' to use the faster "indexOf(char)" method.(‚ŸÍª8‹€§£¥.
+a
+java:S1854¶">Remove this useless assignment to local variable "downLoadID".(ª‰€âøÿÿÿÿ8‹€§£¥.
+Y
+java:S18542"<Remove this useless assignment to local variable "success1".(à¤‹Ä8‹€§£¥.
+X
+java:S1854+";Remove this useless assignment to local variable "success".(Ø¯ËÊ8‹€§£¥.
+N
+java:S1481)",Remove this unused "success" local variable.(‚§žÍûÿÿÿÿ8‹€§£¥.
+[
+java:S1197Ð"8Move the array designator from the variable to the type.( ‹†Ûùÿÿÿÿ8‹€§£¥.
+;
+java:S3398Í"Move this method into "Data".(ú ˜¿8‹€§£¥.

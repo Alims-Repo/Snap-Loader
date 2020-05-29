@@ -1,0 +1,26 @@
+
+Y
+java:S1854/"<Remove this useless assignment to local variable "success1".(à¤‹Ä8ÄŸ£¥.
+o
+java:S3776E"RRefactor this method to reduce its Cognitive Complexity from 34 to the 15 allowed.(ÀÈÙÀ8ÄŸ£¥.
+Q
+java:S1481n"/Remove this unused "downLoadID" local variable.(ª‰€âøÿÿÿÿ8ÄŸ£¥.
+c
+java:S3027?"FPut single-quotes around '/' to use the faster "indexOf(char)" method.(¸Ñ”8ÄŸ£¥.
+]	java:S125M"<This block of commented-out lines of code should be removed.(ÙÀ‹‚şÿÿÿÿ8ÄŸ£¥.
+h
+java:S3027;"FPut single-quotes around '/' to use the faster "indexOf(char)" method.(å¿Êóÿÿÿÿÿ8ÄŸ£¥.
+N
+java:S1481&",Remove this unused "success" local variable.(‚§Íûÿÿÿÿ8ÄŸ£¥.
+]	java:S125V"<This block of commented-out lines of code should be removed.(ÒşÑ¥øÿÿÿÿ8ÄŸ£¥.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ğº°³
+h
+java:S3027;"FPut single-quotes around '?' to use the faster "indexOf(char)" method.(å¿Êóÿÿÿÿÿ8ÄŸ£¥.
+`
+java:S1854n">Remove this useless assignment to local variable "downLoadID".(ª‰€âøÿÿÿÿ8ÄŸ£¥.
+o	java:S116"SRename this field "VideoURL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Êú¸š8ÄŸ£¥.
+q	java:S116"URename this field "VideoTitle" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á£ª8ÄŸ£¥.
+B
+java:S1481+"-Remove this unused "success1" local variable.(˜Ç¤(
+X
+java:S1854(";Remove this useless assignment to local variable "success".(Ø¯ËÊ8ÄŸ£¥.

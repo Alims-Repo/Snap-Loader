@@ -1,0 +1,71 @@
+
+g
+java:S3027‚"KPut single-quotes around '\"' to use the faster "lastIndexOf(char)" method.(Åÿí£ıÿÿÿÿ
+‡
+java:S1192b"lDefine a constant instead of duplicating this literal "Video Quality not available, Select another" 5 times.(ú¬ãşÿÿÿÿ
+C
+java:S1199~"-Extract this nested code block into a method.(¥Î’ß
+<	java:S131Y""Add a default case to this switch.(¨úûàşÿÿÿÿ
+f
+java:S3027"JPut single-quotes around '}' to use the faster "lastIndexOf(char)" method.(—„üÂüÿÿÿÿ
+H
+java:S1199Z"-Extract this nested code block into a method.(òÄúÓúÿÿÿÿ
+H
+java:S1199r"-Extract this nested code block into a method.(Íßµ”ÿÿÿÿÿ
+I
+java:S1199Š"-Extract this nested code block into a method.(—¶¤íüÿÿÿÿ
+h
+java:S3776K"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(öÂÁ¦
+e
+java:S3027u"JPut single-quotes around '}' to use the faster "lastIndexOf(char)" method.(—„üÂüÿÿÿÿ
+_
+java:S3027E"JPut single-quotes around '/' to use the faster "lastIndexOf(char)" method.(…”İG
+B
+java:S1199f"-Extract this nested code block into a method.(™ÏŞ
+W	java:S125š"<This block of commented-out lines of code should be removed.(ãç¾ÿÿÿÿÿ
+z
+java:S1149S"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(¨âàøÿÿÿÿ
+a
+java:S1192^"FDefine a constant instead of duplicating this literal "https" 5 times.(Åÿí£ıÿÿÿÿ
+Q
+java:S18540";Remove this useless assignment to local variable "success".(Ø¯ËÊ
+f
+java:S3027j"KPut single-quotes around '\"' to use the faster "lastIndexOf(char)" method.(Åÿí£ıÿÿÿÿ
+f
+java:S3027^"KPut single-quotes around '\"' to use the faster "lastIndexOf(char)" method.(Åÿí£ıÿÿÿÿ
+z
+java:S1149S"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(¨âàøÿÿÿÿ
+b
+java:S2259:"GA "NullPointerException" could be thrown; "subFolder" is nullable here.(±»ôƒşÿÿÿÿ
+l	java:S116"RRename this field "Quality" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÈóúÿÿÿÿ
+i
+java:S1192]"NDefine a constant instead of duplicating this literal "video\\/mp4\"" 5 times.(—„üÂüÿÿÿÿ
+e
+java:S3027]"JPut single-quotes around '}' to use the faster "lastIndexOf(char)" method.(—„üÂüÿÿÿÿ
+?
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+g
+java:S3027"KPut single-quotes around '\"' to use the faster "lastIndexOf(char)" method.(Åÿí£ıÿÿÿÿ
+B
+java:S14813"-Remove this unused "success1" local variable.(˜Ç¤(
+G
+java:S1481.",Remove this unused "success" local variable.(‚§Íûÿÿÿÿ
+f
+java:S3027v"KPut single-quotes around '\"' to use the faster "lastIndexOf(char)" method.(Åÿí£ıÿÿÿÿ
+m	java:S116"SRename this field "FinalURL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–¤˜şÿÿÿÿ
+f
+java:S3027"JPut single-quotes around '}' to use the faster "lastIndexOf(char)" method.(—„üÂüÿÿÿÿ
+I
+java:S1068".Remove this unused "DownLoadID" private field.(à¢£Êüÿÿÿÿ
+h	java:S116"SRename this field "VideoURL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Êú¸š
+o	java:S116"URename this field "DownLoadID" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à¢£Êüÿÿÿÿ
+e
+java:S3027i"JPut single-quotes around '}' to use the faster "lastIndexOf(char)" method.(—„üÂüÿÿÿÿ
+R
+java:S18547"<Remove this useless assignment to local variable "success1".(à¤‹Ä
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ğº°³
+8
+java:S3398)"Move this method into "Data".(ö–Šèÿÿÿÿÿ
+a
+java:S3027@"FPut single-quotes around '?' to use the faster "indexOf(char)" method.(Ä–£şÿÿÿÿ
+c	java:S100%"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÈÙÀ
